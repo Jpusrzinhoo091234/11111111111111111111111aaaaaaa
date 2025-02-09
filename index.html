@@ -3,169 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legends Store 🎶 - Sua Loja Musical Cartoon</title>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="src/css/styles.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>🎮 GameHub - Assinaturas e Free Fire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-black text-white">
-    <!-- Cabeçalho Cartoon -->
-    <header class="fixed top-0 left-0 w-full z-50 cartoon-menu p-4 flex justify-between items-center">
-        <div class="flex items-center">
-            <h1 class="text-3xl font-bold flex items-center cartoon-emoji">
-                Legends Store 🎸
-            </h1>
-        </div>
-        
-        <nav class="hidden md:flex space-x-6">
-            <a href="#" class="cartoon-button flex items-center">Início 🏠</a>
-            <a href="#" class="cartoon-button flex items-center">Produtos 🛍️</a>
-            <a href="#" class="cartoon-button flex items-center">Sobre Nós ℹ️</a>
-            <a href="#" class="cartoon-button flex items-center">Contato 📞</a>
-            <a href="#" class="cartoon-button flex items-center relative">
-                Carrinho 🛒 
-                <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">0</span>
-            </a>
-        </nav>
-
-        <div class="flex items-center space-x-4">
-            <button class="cartoon-emoji text-2xl">🔍</button>
-            <button class="cartoon-emoji text-2xl">👤</button>
-        </div>
-    </header>
-
-    <!-- Espaço para compensar cabeçalho fixo -->
-    <div class="h-20"></div>
-
-    <!-- Banner Principal Cartoon -->
-    <section class="cartoon-banner relative overflow-hidden py-16">
-        <div class="container mx-auto text-center cartoon-banner-content">
-            <h2 class="text-5xl font-bold mb-6 text-white drop-shadow-lg">
-                Descubra as Lendas Musicais! 🎉
-            </h2>
-            <div class="flex justify-center space-x-8 mt-8">
-                <div class="cartoon-emoji text-6xl">🎧</div>
-                <div class="cartoon-emoji text-6xl">👕</div>
-                <div class="cartoon-emoji text-6xl">🎸</div>
+<body>
+    <div class="game-store-container">
+        <header class="game-header">
+            <div class="logo-container">
+                <h1>🎮 GameHub</h1>
+                <p>Sua plataforma de jogos e assinaturas</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Seção de Produtos -->
-    <section class="container mx-auto mt-12 px-4">
-        <div class="flex cartoon-responsive-stack">
-            <!-- Filtros Laterais -->
-            <div class="w-1/4 pr-8">
-                <h3 class="text-2xl mb-6 text-cartoon-primary">Categorias</h3>
-                <div class="space-y-4">
-                    <button class="cartoon-button w-full flex items-center justify-center">
-                        👕 Roupas
+            
+            <div class="game-header-actions">
+                <div class="game-search-bar">
+                    <input type="text" placeholder="Buscar jogos, assinaturas...">
+                    <button class="search-button">
+                        <span class="game-magnify">🔍</span>
                     </button>
-                    <button class="cartoon-button w-full flex items-center justify-center">
-                        🎒 Acessórios
-                    </button>
-                    <button class="cartoon-button w-full flex items-center justify-center">
-                        🖼️ Decoração
+                </div>
+                
+                <div class="game-cart-section">
+                    <button class="game-cart-btn">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count">0</span>
                     </button>
                 </div>
             </div>
+        </header>
 
-            <!-- Grade de Produtos -->
-            <div class="w-3/4 grid grid-cols-3 gap-6">
-                <!-- Exemplo de Produto Cartoon -->
-                <div class="cartoon-product-card p-6 text-center">
-                    <div class="text-6xl mb-4 cartoon-emoji">🎧</div>
-                    <h4 class="text-xl font-semibold mb-2">Fones de Ouvido Legends</h4>
-                    <p class="text-2xl mb-4">R$ 299,99 💰</p>
-                    <button class="cartoon-button w-full">
-                        Adicionar ao Carrinho 🛒
-                    </button>
-                </div>
-                <!-- Mais produtos aqui... -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Rodapé Cartoon -->
-    <footer class="bg-cartoon-secondary text-black py-16 mt-12">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <!-- Coluna 1: Links Úteis -->
-                <div>
-                    <h4 class="text-2xl font-bold mb-6 text-white flex items-center">
-                        🌐 Links Úteis
-                    </h4>
-                    <div class="space-y-4">
-                        <a href="#" class="cartoon-button block w-full text-left">
-                            🔒 Política de Privacidade
-                        </a>
-                        <a href="#" class="cartoon-button block w-full text-left">
-                            📜 Termos de Uso
-                        </a>
-                        <a href="#" class="cartoon-button block w-full text-left">
-                            ❓ Central de Ajuda
-                        </a>
-                        <a href="#" class="cartoon-button block w-full text-left">
-                            📦 Rastreamento de Pedidos
-                        </a>
+        <main class="game-main-content">
+            <section class="game-category-section">
+                <h2>🎲 Explore Categorias de Jogos</h2>
+                <div class="game-category-carousel">
+                    <div class="game-category-item" data-category="free-fire">
+                        <div class="category-icon">💥</div>
+                        <h3>Free Fire</h3>
+                        <p>Diamantes e Passes de Batalha</p>
+                    </div>
+                    <div class="game-category-item" data-category="assinaturas">
+                        <div class="category-icon">🔑</div>
+                        <h3>Assinaturas</h3>
+                        <p>Planos Premium de Jogos</p>
+                    </div>
+                    <div class="game-category-item" data-category="creditos">
+                        <div class="category-icon">💎</div>
+                        <h3>Créditos de Jogos</h3>
+                        <p>Moedas e Recursos</p>
+                    </div>
+                    <div class="game-category-item" data-category="mobile">
+                        <div class="category-icon">📱</div>
+                        <h3>Jogos Mobile</h3>
+                        <p>Melhores Jogos para Celular</p>
+                    </div>
+                    <div class="game-category-item" data-category="pc">
+                        <div class="category-icon">💻</div>
+                        <h3>Jogos PC</h3>
+                        <p>Títulos para Computador</p>
                     </div>
                 </div>
+            </section>
 
-                <!-- Coluna 2: Redes Sociais -->
-                <div>
-                    <h4 class="text-2xl font-bold mb-6 text-white flex items-center">
-                        🤝 Conecte-se
-                    </h4>
-                    <div class="flex flex-col space-y-4">
-                        <a href="#" class="cartoon-button flex items-center">
-                            <span class="text-2xl mr-3">📸</span> Instagram
-                        </a>
-                        <a href="#" class="cartoon-button flex items-center">
-                            <span class="text-2xl mr-3">📘</span> Facebook
-                        </a>
-                        <a href="#" class="cartoon-button flex items-center">
-                            <span class="text-2xl mr-3">🐦</span> Twitter
-                        </a>
-                        <a href="#" class="cartoon-button flex items-center">
-                            <span class="text-2xl mr-3">🎵</span> TikTok
-                        </a>
+            <section class="game-product-section">
+                <div class="game-featured-products">
+                    <h2>🌟 Destaques</h2>
+                    <div class="game-product-grid">
+                        <div class="game-product-card" data-product="1" data-category="free-fire">
+                            <div class="product-image">💎</div>
+                            <h3>Pacote 500 Diamantes Free Fire</h3>
+                            <div class="product-details">
+                                <p class="price">R$ 29,99</p>
+                                <button class="game-add-to-cart">Comprar Agora!</button>
+                            </div>
+                        </div>
+                        <div class="game-product-card" data-product="2" data-category="assinaturas">
+                            <div class="product-image">🎮</div>
+                            <h3>Xbox Game Pass 1 Mês</h3>
+                            <div class="product-details">
+                                <p class="price">R$ 39,99</p>
+                                <button class="game-add-to-cart">Comprar Agora!</button>
+                            </div>
+                        </div>
+                        <div class="game-product-card" data-product="3" data-category="creditos">
+                            <div class="product-image">💵</div>
+                            <h3>Créditos Steam 50 Reais</h3>
+                            <div class="product-details">
+                                <p class="price">R$ 50,00</p>
+                                <button class="game-add-to-cart">Comprar Agora!</button>
+                            </div>
+                        </div>
+                        <div class="game-product-card" data-product="4" data-category="free-fire">
+                            <div class="product-image">🔫</div>
+                            <h3>Passe de Batalha Free Fire</h3>
+                            <div class="product-details">
+                                <p class="price">R$ 49,99</p>
+                                <button class="game-add-to-cart">Comprar Agora!</button>
+                            </div>
+                        </div>
+                        <div class="game-product-card" data-product="5" data-category="mobile">
+                            <div class="product-image">📲</div>
+                            <h3>Créditos PUBG Mobile</h3>
+                            <div class="product-details">
+                                <p class="price">R$ 24,99</p>
+                                <button class="game-add-to-cart">Comprar Agora!</button>
+                            </div>
+                        </div>
+                        <div class="game-product-card" data-product="6" data-category="pc">
+                            <div class="product-image">🖥️</div>
+                            <h3>Gift Card Epic Games</h3>
+                            <div class="product-details">
+                                <p class="price">R$ 99,99</p>
+                                <button class="game-add-to-cart">Comprar Agora!</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </section>
+        </main>
 
-                <!-- Coluna 3: Newsletter -->
-                <div>
-                    <h4 class="text-2xl font-bold mb-6 text-white flex items-center">
-                        📬 Newsletter
-                    </h4>
-                    <p class="text-white mb-4">
-                        Receba as últimas novidades e ofertas especiais! 🎉
-                    </p>
-                    <form class="flex flex-col space-y-4">
-                        <input 
-                            type="email" 
-                            placeholder="Seu melhor e-mail 📧" 
-                            class="p-3 rounded-lg bg-white text-black"
-                            required
-                        >
-                        <button 
-                            type="submit" 
-                            class="cartoon-button w-full"
-                        >
-                            Inscrever-se 🚀
-                        </button>
-                    </form>
+        <aside class="game-cart-sidebar">
+            <div class="game-cart-header">
+                <h2>🛒 Carrinho de Jogos</h2>
+                <button class="close-cart">❌</button>
+            </div>
+            <div class="cart-items">
+                <!-- Itens do carrinho serão adicionados dinamicamente aqui -->
+            </div>
+            <div class="game-cart-summary">
+                <div class="cart-total">
+                    <span>Total Gamer:</span>
+                    <span class="total-price">R$ 0,00</span>
+                </div>
+                <button class="game-checkout-btn">Finalizar Compra</button>
+            </div>
+        </aside>
+
+        <footer class="game-footer">
+            <div class="game-footer-content">
+                <div class="footer-section">
+                    <h3>🎮 GameHub</h3>
+                    <p>Sua fonte de entretenimento digital!</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Úteis</h4>
+                    <ul>
+                        <li>🏠 Sobre Nós</li>
+                        <li>📞 Contato</li>
+                        <li>🔄 Política de Troca</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Suporte</h4>
+                    <p>📞 (00) 0000-0000</p>
+                    <p>✉️ suporte@gamehub.com</p>
                 </div>
             </div>
-
-            <!-- Linha de Copyright -->
-            <div class="mt-12 pt-8 border-t border-white/20 text-center">
-                <p class="text-white">
-                    © 2025 Legends Store 🎸 Todos os direitos reservados
-                </p>
+            <div class="game-copyright">
+                &copy; 2025 GameHub. Todos os direitos reservados. 🎮
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
-    <script src="src/js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
