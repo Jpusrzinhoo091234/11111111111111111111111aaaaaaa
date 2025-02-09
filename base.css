@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('variables.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: var(--gradient-background);
+    color: var(--game-text);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne rolagem horizontal em dispositivos móveis */
+}
+
+.game-store-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border-radius: 15px;
+}
+
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+    .game-store-container {
+        padding: 10px;
+        border-radius: 0; /* Remove bordas arredondadas em telas menores */
+    }
+
+    body {
+        font-size: 14px; /* Reduz tamanho da fonte para dispositivos móveis */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-store-container {
+        padding: 5px;
+    }
+
+    body {
+        font-size: 12px; /* Fonte ainda menor para telas muito pequenas */
+    }
+}

@@ -1,0 +1,131 @@
+@import url('variables.css');
+
+.game-header {
+    background: var(--gradient-primary);
+    color: var(--game-text);
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.logo-container h1 {
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--game-text);
+}
+
+.game-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.game-search-bar {
+    display: flex;
+    align-items: center;
+    background-color: rgba(78, 84, 89, 0.6); /* Cinza 4 */
+    border-radius: 25px;
+    overflow: hidden;
+    transition: background-color 0.3s;
+    flex-grow: 1;
+}
+
+.game-search-bar:hover {
+    background-color: rgba(78, 84, 89, 0.8); /* Cinza 4 mais escuro */
+}
+
+.game-search-bar input {
+    border: none;
+    padding: 10px 15px;
+    width: 250px;
+    background: transparent;
+    color: var(--game-text);
+    outline: none;
+    flex-grow: 1;
+}
+
+.search-button {
+    background: var(--gradient-secondary);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+}
+
+.game-cart-btn {
+    background: var(--gradient-hover);
+    border: none;
+    color: var(--game-text);
+    padding: 10px 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.game-cart-btn:hover {
+    transform: scale(1.05);
+}
+
+.cart-count {
+    background: var(--gradient-secondary);
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+}
+
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+    .game-header {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .logo-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .game-header-actions {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .game-search-bar {
+        width: 100%;
+    }
+
+    .game-search-bar input {
+        width: 100%;
+    }
+
+    .game-cart-btn {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo-container h1 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .game-header-actions {
+        gap: 5px;
+    }
+
+    .search-button {
+        padding: 8px 10px;
+    }
+
+    .game-cart-btn {
+        padding: 8px 10px;
+    }
+}

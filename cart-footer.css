@@ -1,0 +1,333 @@
+@import url('variables.css');
+
+.game-cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+    box-shadow: -4px 0 15px rgba(0,0,0,0.3);
+    transition: right 0.3s;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: var(--game-text);
+}
+
+.game-cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(236, 240, 241, 0.1);
+    padding-bottom: 10px;
+}
+
+.game-cart-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.game-cart-close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--game-accent);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.game-cart-close-btn:hover {
+    transform: scale(1.2);
+    color: var(--game-secondary);
+}
+
+.game-cart-items {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px;
+}
+
+.game-cart-item {
+    display: flex;
+    align-items: center;
+    background: rgba(52, 73, 94, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s;
+}
+
+.game-cart-item:hover {
+    background: rgba(52, 73, 94, 0.5);
+}
+
+.cart-item-icon {
+    font-size: 2.5rem;
+    margin-right: 15px;
+    background: var(--gradient-secondary);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+}
+
+.cart-item-details p {
+    margin: 0 0 10px 0;
+    color: rgba(236, 240, 241, 0.7);
+    font-size: 0.8rem;
+}
+
+.cart-item-price-quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-price {
+    font-weight: bold;
+    color: var(--game-secondary);
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    background: rgba(52, 73, 94, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.quantity-btn {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    color: var(--game-text);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quantity-btn:hover {
+    background-color: rgba(52, 73, 94, 0.7);
+}
+
+.quantity {
+    padding: 0 10px;
+}
+
+.cart-item-remove-container {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-remove {
+    display: flex;
+    align-items: center;
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: all 0.3s;
+    gap: 5px;
+}
+
+.cart-item-remove .remove-icon {
+    font-size: 1rem;
+    margin-right: 5px;
+}
+
+.cart-item-remove .remove-text {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.cart-item-remove:hover {
+    background: rgba(231, 76, 60, 0.2);
+    border-color: rgba(231, 76, 60, 0.5);
+    color: #c0392b;
+    transform: scale(1.05);
+}
+
+.cart-item-remove:active {
+    transform: scale(0.95);
+    background: rgba(231, 76, 60, 0.3);
+}
+
+.game-cart-summary {
+    background: rgba(52, 73, 94, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.cart-summary-row.total {
+    font-weight: bold;
+    border-top: 2px solid rgba(236, 240, 241, 0.1);
+    padding-top: 10px;
+    margin-top: 10px;
+    color: var(--game-secondary);
+}
+
+.game-checkout-btn {
+    width: 100%;
+    background: var(--gradient-secondary);
+    color: var(--game-text);
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s;
+}
+
+.game-checkout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.game-footer {
+    background-color: var(--game-primary);
+    color: var(--game-text);
+    padding: 30px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section h3, .footer-section h4 {
+    margin-bottom: 15px;
+    color: var(--game-text);
+    font-size: 1.1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: var(--game-text);
+}
+
+.game-copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--game-text);
+}
+
+/* Animação de remoção de item */
+@keyframes removeItem {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.game-cart-item.removing {
+    animation: removeItem 0.5s ease-in-out forwards;
+}
+
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+    .game-cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+
+    .footer-section ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer-section ul li {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-cart-sidebar {
+        padding: 10px;
+    }
+
+    .game-cart-summary {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .game-checkout-btn {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    .footer-section h3, .footer-section h4 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section ul li {
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+
+    .game-copyright {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,127 @@
+@import url('variables.css');
+
+.game-category-section {
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.game-category-section h2 {
+    text-align: center;
+    color: var(--game-text);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.game-category-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
+}
+
+.game-category-item {
+    flex: 0 0 200px;
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border: 2px solid transparent;
+    scroll-snap-align: start; /* Ajuda na rolagem suave em dispositivos móveis */
+}
+
+.game-category-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+    border-color: var(--game-secondary);
+}
+
+.game-category-item .category-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--game-secondary);
+    transition: transform 0.3s;
+}
+
+.game-category-item:hover .category-icon {
+    transform: rotate(15deg);
+}
+
+.game-category-item h3 {
+    color: var(--game-text);
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.game-category-item p {
+    color: rgba(236, 240, 241, 0.7);
+    font-size: 0.9rem;
+}
+
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+    .game-category-section {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .game-category-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .game-category-carousel {
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .game-category-item {
+        flex: 0 0 150px;
+        padding: 15px;
+    }
+
+    .game-category-item .category-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .game-category-item h3 {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+    }
+
+    .game-category-item p {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .game-category-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .game-category-item {
+        flex: 0 0 120px;
+        padding: 10px;
+    }
+
+    .game-category-item .category-icon {
+        font-size: 2rem;
+    }
+
+    .game-category-item h3 {
+        font-size: 0.8rem;
+    }
+
+    .game-category-item p {
+        display: none; /* Esconde descrição em telas muito pequenas */
+    }
+}
