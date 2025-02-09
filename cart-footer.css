@@ -68,6 +68,56 @@
     background: rgba(52, 73, 94, 0.5);
 }
 
+.game-cart-item.cartoon-style {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.game-cart-item.cartoon-style:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+.game-cart-item.cartoon-style .cart-item-icon {
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-cart-item.cartoon-style .cart-item-details h3 {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.game-cart-item.cartoon-style .cart-item-details p {
+    color: rgba(255,255,255,0.7);
+}
+
+.game-cart-item.cartoon-style .cart-item-price {
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+.game-cart-item.cartoon-style .cart-item-quantity {
+    background: rgba(0,0,0,0.2);
+    border-radius: 20px;
+}
+
+.game-cart-item.cartoon-style .quantity-btn {
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.game-cart-item.cartoon-style .quantity-btn:hover {
+    background-color: rgba(0,0,0,0.3);
+}
+
 .cart-item-icon {
     font-size: 2.5rem;
     margin-right: 15px;

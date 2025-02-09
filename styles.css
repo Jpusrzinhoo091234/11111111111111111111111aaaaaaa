@@ -261,9 +261,10 @@ body {
     right: -400px;
     width: 400px;
     height: 100%;
-    background-color: #2C3E50;
-    box-shadow: -4px 0 6px rgba(0,0,0,0.1);
-    transition: right 0.3s;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-radius: 20px 0 0 20px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.2);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: 1000;
     padding: 20px;
 }
@@ -283,8 +284,34 @@ body {
     color: var(--game-text);
 }
 
+.game-cart-close-btn {
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s;
+}
+
+.game-cart-close-btn:hover {
+    transform: rotate(180deg);
+}
+
 .game-cart-summary {
     margin-top: 20px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.cart-summary-row {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.cart-summary-row.total {
+    background: rgba(0,0,0,0.2);
+    font-weight: bold;
 }
 
 .cart-total {
@@ -297,12 +324,19 @@ body {
 
 .game-checkout-btn {
     width: 100%;
-    background-color: var(--game-primary);
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    border-radius: 25px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s;
     color: var(--game-text);
     border: none;
     padding: 15px;
-    border-radius: 20px;
     cursor: pointer;
+}
+
+.game-checkout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.3);
 }
 
 /* Game Footer */

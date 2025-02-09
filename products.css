@@ -12,19 +12,58 @@
 
 .game-product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    perspective: 2000px;
 }
 
 .game-product-card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    backface-visibility: hidden;
+    cursor: pointer;
     background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
     border-radius: 15px;
     padding: 20px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.game-product-card .product-content {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.1) 100%);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
     position: relative;
     overflow: hidden;
+    transition: all 0.6s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.game-product-card .product-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(41, 128, 185, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.game-product-card .product-image {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    transition: all 0.6s ease;
+    transform: translateZ(50px);
+    text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: var(--game-secondary);
 }
 
 .game-product-card:hover {
@@ -32,42 +71,163 @@
     box-shadow: 0 8px 15px rgba(0,0,0,0.4);
 }
 
-.game-product-card .product-image {
-    font-size: 4rem;
-    margin-bottom: 15px;
-    color: var(--game-secondary);
-    transition: transform 0.3s;
-}
-
-.game-product-card:hover .product-image {
-    transform: scale(1.1) rotate(10deg);
-}
-
 .game-product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    transition: all 0.6s ease;
+    transform: translateZ(30px);
     color: var(--game-text);
-    margin-bottom: 10px;
     font-weight: bold;
 }
 
 .game-product-card .price {
+    font-size: 1.4rem;
     font-weight: bold;
     color: var(--game-accent);
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    margin-bottom: 15px;
+    transition: all 0.6s ease;
+    transform: translateZ(40px);
 }
 
-.game-add-to-cart {
-    background: var(--gradient-secondary);
-    color: var(--game-text);
+.game-product-card .game-add-to-cart {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
     border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
     cursor: pointer;
+    transition: all 0.6s ease;
+    transform: translateZ(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.game-product-card:hover .product-content {
+    transform: rotateY(-10deg) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: rgba(52, 152, 219, 0.3);
+}
+
+.game-product-card:hover .product-content::before {
+    opacity: 1;
+}
+
+.game-product-card:hover .product-image {
+    transform: translateZ(80px) rotate(10deg) scale(1.1);
+    text-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.game-product-card:hover h3 {
+    color: #3498db;
+    transform: translateZ(50px);
+}
+
+.game-product-card:hover .price {
+    color: #2980b9;
+    transform: translateZ(60px);
+}
+
+.game-product-card:hover .game-add-to-cart {
+    transform: translateZ(40px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.game-product-card .game-add-to-cart:hover {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    transform: translateZ(40px) scale(1.1);
+}
+
+.game-product-card .game-add-to-cart.added {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    transform: scale(0.95);
+}
+
+.game-product-card.cartoon-style {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transform: perspective(500px);
+}
+
+.game-product-card.cartoon-style:hover {
+    transform: scale(1.05) rotateX(5deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.game-product-card.cartoon-style .product-image {
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     transition: transform 0.3s;
 }
 
-.game-add-to-cart:hover {
+.game-product-card.cartoon-style:hover .product-image {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.game-product-card.cartoon-style h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.game-product-card.cartoon-style .price {
+    font-weight: bold;
+    color: #f1c40f;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.game-product-card.cartoon-style .game-add-to-cart {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: bold;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.game-product-card.cartoon-style .game-add-to-cart span {
+    font-size: 1.2rem;
+}
+
+.game-product-card.cartoon-style .game-add-to-cart:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.game-product-card.cartoon-style .game-add-to-cart.added {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    transform: scale(0.95);
+}
+
+@keyframes productPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.game-product-card.highlighted {
+    animation: productPulse 2s infinite;
 }
 
 /* Media Queries para Responsividade */

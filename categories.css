@@ -17,53 +17,127 @@
 
 .game-category-carousel {
     display: flex;
-    overflow-x: auto;
     gap: 20px;
-    padding-bottom: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos móveis */
+    scrollbar-width: none;
+}
+
+.game-category-carousel::-webkit-scrollbar {
+    display: none;
 }
 
 .game-category-item {
-    flex: 0 0 200px;
-    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.3s;
+    flex: 0 0 auto;
+    width: 200px;
+    scroll-snap-align: center;
+    position: relative;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    border: 2px solid transparent;
-    scroll-snap-align: start; /* Ajuda na rolagem suave em dispositivos móveis */
 }
 
-.game-category-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
-    border-color: var(--game-secondary);
+.game-category-item .category-content {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(41, 128, 185, 0.1) 100%);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.game-category-item .category-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(41, 128, 185, 0.05) 100%);
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
 }
 
 .game-category-item .category-icon {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 15px;
-    color: var(--game-secondary);
-    transition: transform 0.3s;
-}
-
-.game-category-item:hover .category-icon {
-    transform: rotate(15deg);
+    transition: all 0.5s ease;
+    transform: translateZ(50px);
+    text-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .game-category-item h3 {
-    color: var(--game-text);
+    font-size: 1.2rem;
     margin-bottom: 10px;
-    font-weight: bold;
+    transition: all 0.5s ease;
+    transform: translateZ(30px);
 }
 
 .game-category-item p {
-    color: rgba(236, 240, 241, 0.7);
+    color: rgba(52, 73, 94, 0.7);
     font-size: 0.9rem;
+    transition: all 0.5s ease;
+    transform: translateZ(20px);
+}
+
+.game-category-item:hover .category-content {
+    transform: rotateY(10deg) scale(1.05);
+    border-color: rgba(52, 152, 219, 0.3);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.game-category-item:hover .category-content::before {
+    opacity: 1;
+}
+
+.game-category-item:hover .category-icon {
+    transform: translateZ(80px) rotate(10deg);
+    text-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.game-category-item:hover h3 {
+    color: #3498db;
+    transform: translateZ(50px);
+}
+
+.game-category-item.selected .category-content {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-color: white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.game-category-item.selected .category-content::before {
+    opacity: 0.2;
+}
+
+.game-category-item.selected .category-icon {
+    color: white;
+    transform: translateZ(80px) rotate(15deg) scale(1.2);
+    text-shadow: 0 8px 12px rgba(0,0,0,0.3);
+}
+
+.game-category-item.selected h3 {
+    color: white;
+    transform: translateZ(50px);
+}
+
+.game-category-item.selected p {
+    color: rgba(255,255,255,0.8);
+}
+
+@keyframes categoryPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.game-category-item.selected {
+    animation: categoryPulse 2s infinite;
 }
 
 /* Media Queries para Responsividade */
@@ -84,7 +158,7 @@
     }
 
     .game-category-item {
-        flex: 0 0 150px;
+        width: 150px;
         padding: 15px;
     }
 
@@ -109,7 +183,7 @@
     }
 
     .game-category-item {
-        flex: 0 0 120px;
+        width: 120px;
         padding: 10px;
     }
 

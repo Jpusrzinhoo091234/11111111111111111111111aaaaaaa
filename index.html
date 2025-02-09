@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 Legends Store - Assinaturas e Free Fire</title>
+    <title>🎮 Legends Store - Seu Marketplace de Games</title>
     
-    <!-- CSS Modulares -->
+    <!-- Estilos Base -->
     <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="categories.css">
+    <link rel="stylesheet" href="categories-scroll.css">
     <link rel="stylesheet" href="products.css">
     <link rel="stylesheet" href="cart-footer.css">
+    <link rel="stylesheet" href="cart-floating.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="game-store-container">
+    <div class="game-container">
+        <!-- Header -->
         <header class="game-header">
             <div class="logo-container">
                 <h1>🎮 Legends Store</h1>
@@ -23,24 +26,18 @@
             <div class="game-header-actions">
                 <div class="game-search-bar">
                     <input type="text" placeholder="Buscar jogos, assinaturas...">
-                    <button class="search-button">
-                        <span class="game-magnify">🔍</span>
-                    </button>
-                </div>
-                
-                <div class="game-cart-section">
-                    <button class="game-cart-btn">
-                        <span class="cart-icon">🛒</span>
-                        <span class="cart-count">0</span>
-                    </button>
+                    <button class="search-button">🔍</button>
                 </div>
             </div>
         </header>
 
+        <!-- Conteúdo Principal -->
         <main class="game-main-content">
+            <!-- Seção de Categorias -->
             <section class="game-category-section">
                 <h2>🎲 Explore Categorias de Jogos</h2>
                 <div class="game-category-carousel">
+                    <!-- Categorias serão renderizadas dinamicamente pelo JavaScript -->
                     <div class="game-category-item" data-category="free-fire">
                         <div class="category-icon">💥</div>
                         <h3>Free Fire</h3>
@@ -69,10 +66,12 @@
                 </div>
             </section>
 
-            <section class="game-product-section">
+            <!-- Seção de Produtos -->
+            <section class="game-products-section">
                 <div class="game-featured-products">
                     <h2>🌟 Destaques</h2>
                     <div class="game-product-grid">
+                        <!-- Produtos serão renderizados dinamicamente pelo JavaScript -->
                         <div class="game-product-card" data-product="1" data-category="free-fire">
                             <div class="product-image">💎</div>
                             <h3>Pacote 500 Diamantes Free Fire</h3>
@@ -126,13 +125,15 @@
             </section>
         </main>
 
+        <!-- Carrinho Lateral -->
         <aside class="game-cart-sidebar">
             <div class="game-cart-header">
                 <h2>🛒 Seu Carrinho</h2>
-                <button class="game-cart-close-btn">×</button>
+                <button class="game-cart-close-btn">✖</button>
             </div>
 
             <div class="game-cart-items">
+                <!-- Itens do carrinho serão adicionados dinamicamente -->
                 <div class="game-cart-item">
                     <div class="cart-item-icon">💎</div>
                     <div class="cart-item-details">
@@ -203,20 +204,30 @@
             <div class="game-cart-summary">
                 <div class="cart-summary-row">
                     <span>Subtotal</span>
-                    <span>R$ 99,97</span>
+                    <span>R$ 0,00</span>
                 </div>
                 <div class="cart-summary-row">
                     <span>Desconto</span>
-                    <span>-R$ 10,00</span>
+                    <span>-R$ 0,00</span>
                 </div>
                 <div class="cart-summary-row total">
                     <span>Total</span>
-                    <span>R$ 89,97</span>
+                    <span>R$ 0,00</span>
+                </div>
+                
+                <div class="cart-actions">
+                    <button class="game-clear-cart-btn">🗑️ Limpar Carrinho</button>
                 </div>
             </div>
 
             <button class="game-checkout-btn">Finalizar Compra</button>
         </aside>
+
+        <!-- Botão de Carrinho Flutuante -->
+        <div class="game-floating-cart-button open-cart-btn">
+            <div class="cart-icon">🛒</div>
+            <div class="cart-item-count">0</div>
+        </div>
 
         <footer class="game-footer">
             <div class="game-footer-content">
@@ -244,6 +255,8 @@
         </footer>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="store.js"></script>
+    <script src="cart.js"></script>
 </body>
 </html>
