@@ -1,22 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Arial:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --game-primary: #4a4a8a;
-    --game-secondary: #6a6aaa;
-    --game-background: #f0f0f8;
-    --game-text: #2a2a4a;
-    --game-accent: #ff6b6b;
+    /* Paleta de Cores com Gradientes */
+    --game-primary: #2C3E50;       /* Azul Escuro Acinzentado */
+    --game-secondary: #3498DB;     /* Azul Brilhante */
+    --game-accent: #E74C3C;        /* Vermelho Vivo */
+    --game-background: #2C3E50;    /* Azul Escuro para Fundo */
+    --game-text: #ECF0F1;          /* Branco Acinzentado para Texto */
+    --game-highlight: #27AE60;     /* Verde Esmeralda */
+    
+    /* Variáveis de Gradiente */
+    --gradient-primary: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    --gradient-secondary: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    --gradient-background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    --gradient-hover: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: var(--game-background);
+    background: var(--gradient-background);
     color: var(--game-text);
     line-height: 1.6;
 }
@@ -25,23 +33,25 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border-radius: 15px;
 }
 
-/* Game Header */
+/* Cabeçalho do Jogo */
 .game-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--game-primary);
-    color: white;
+    background: var(--gradient-primary);
+    color: var(--game-text);
     padding: 15px 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
 .logo-container h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: var(--game-text);
 }
 
 .game-header-actions {
@@ -53,57 +63,75 @@ body {
 .game-search-bar {
     display: flex;
     align-items: center;
-    background-color: white;
-    border-radius: 20px;
+    background-color: rgba(52, 73, 94, 0.3);
+    border-radius: 25px;
     overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+.game-search-bar:hover {
+    background-color: rgba(52, 73, 94, 0.5);
 }
 
 .game-search-bar input {
     border: none;
     padding: 10px 15px;
     width: 250px;
+    background: transparent;
+    color: var(--game-text);
     outline: none;
 }
 
 .search-button {
-    background-color: var(--game-accent);
+    background: var(--gradient-secondary);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.search-button:hover {
+    transform: scale(1.1);
 }
 
 .game-cart-btn {
-    background-color: var(--game-secondary);
+    background: var(--gradient-hover);
     border: none;
-    color: white;
+    color: var(--game-text);
     padding: 10px 15px;
     border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.game-cart-btn:hover {
+    transform: scale(1.05);
 }
 
 .cart-count {
-    background-color: var(--game-accent);
+    background: var(--gradient-secondary);
     border-radius: 50%;
     padding: 2px 8px;
     font-size: 0.8rem;
 }
 
-/* Game Category Section */
+/* Seção de Categorias do Jogo */
 .game-category-section {
-    background-color: white;
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
     border-radius: 15px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 .game-category-section h2 {
     text-align: center;
-    color: var(--game-primary);
+    color: var(--game-text);
     margin-bottom: 20px;
+    font-size: 1.8rem;
 }
 
 .game-category-carousel {
@@ -117,94 +145,113 @@ body {
 
 .game-category-item {
     flex: 0 0 200px;
-    background-color: var(--game-background);
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
     border-radius: 15px;
     padding: 20px;
     text-align: center;
     transition: all 0.3s;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     border: 2px solid transparent;
 }
 
 .game-category-item:hover {
     transform: scale(1.05);
-    border-color: var(--game-accent);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+    border-color: var(--game-secondary);
 }
 
 .game-category-item .category-icon {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--game-secondary);
+    transition: transform 0.3s;
+}
+
+.game-category-item:hover .category-icon {
+    transform: rotate(15deg);
 }
 
 .game-category-item h3 {
-    color: var(--game-primary);
-    margin-bottom: 5px;
+    color: var(--game-text);
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .game-category-item p {
-    color: var(--game-text);
+    color: rgba(236, 240, 241, 0.7);
     font-size: 0.9rem;
 }
 
-/* Game Product Section */
+/* Seção de Produtos do Jogo */
 .game-product-section {
     margin-bottom: 20px;
 }
 
 .game-featured-products h2 {
     text-align: center;
-    color: var(--game-primary);
+    color: var(--game-text);
     margin-bottom: 20px;
 }
 
 .game-product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
 }
 
 .game-product-card {
-    background-color: white;
+    background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
     border-radius: 15px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .game-product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
 }
 
 .game-product-card .product-image {
     font-size: 4rem;
     margin-bottom: 15px;
+    color: var(--game-secondary);
+    transition: transform 0.3s;
+}
+
+.game-product-card:hover .product-image {
+    transform: scale(1.1) rotate(10deg);
 }
 
 .game-product-card h3 {
-    color: var(--game-primary);
+    color: var(--game-text);
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .game-product-card .price {
     font-weight: bold;
     color: var(--game-accent);
     margin-bottom: 10px;
+    font-size: 1.2rem;
 }
 
 .game-add-to-cart {
-    background-color: var(--game-accent);
-    color: white;
+    background: var(--gradient-secondary);
+    color: var(--game-text);
     border: none;
     padding: 10px 15px;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: transform 0.3s;
 }
 
 .game-add-to-cart:hover {
-    background-color: var(--game-primary);
+    transform: scale(1.05);
 }
 
 /* Game Cart Sidebar */
@@ -214,7 +261,7 @@ body {
     right: -400px;
     width: 400px;
     height: 100%;
-    background-color: white;
+    background-color: #2C3E50;
     box-shadow: -4px 0 6px rgba(0,0,0,0.1);
     transition: right 0.3s;
     z-index: 1000;
@@ -233,6 +280,7 @@ body {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: var(--game-text);
 }
 
 .game-cart-summary {
@@ -244,12 +292,13 @@ body {
     justify-content: space-between;
     margin-bottom: 20px;
     font-weight: bold;
+    color: var(--game-text);
 }
 
 .game-checkout-btn {
     width: 100%;
     background-color: var(--game-primary);
-    color: white;
+    color: var(--game-text);
     border: none;
     padding: 15px;
     border-radius: 20px;
@@ -259,7 +308,7 @@ body {
 /* Game Footer */
 .game-footer {
     background-color: var(--game-primary);
-    color: white;
+    color: var(--game-text);
     padding: 30px 0;
 }
 
@@ -272,6 +321,7 @@ body {
 
 .footer-section h3, .footer-section h4 {
     margin-bottom: 15px;
+    color: var(--game-text);
 }
 
 .footer-section ul {
@@ -281,10 +331,12 @@ body {
 .footer-section ul li {
     margin-bottom: 10px;
     cursor: pointer;
+    color: var(--game-text);
 }
 
 .game-copyright {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.1);
+    color: var(--game-text);
 }
