@@ -1,0 +1,15 @@
+:root {
+    /* Paleta de Cores com Gradientes */
+    --game-primary: #2C3E50;       /* Azul Escuro Acinzentado */
+    --game-secondary: #3498DB;     /* Azul Brilhante */
+    --game-accent: #E74C3C;        /* Vermelho Vivo */
+    --game-background: #2C3E50;    /* Azul Escuro para Fundo */
+    --game-text: #ECF0F1;          /* Branco Acinzentado para Texto */
+    --game-highlight: #27AE60;     /* Verde Esmeralda */
+    
+    /* Variáveis de Gradiente */
+    --gradient-primary: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    --gradient-secondary: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+    --gradient-background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);
+    --gradient-hover: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+}

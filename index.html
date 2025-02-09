@@ -6,19 +6,18 @@
     <title>🎮 Legends Store - Assinaturas e Free Fire</title>
     
     <!-- CSS Modulares -->
-    <link rel="stylesheet" href="css/variables.css">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/categories.css">
-    <link rel="stylesheet" href="css/products.css">
-    <link rel="stylesheet" href="css/cart-footer.css">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="categories.css">
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="cart-footer.css">
 </head>
 <body>
     <div class="game-store-container">
         <header class="game-header">
             <div class="logo-container">
                 <h1>🎮 Legends Store</h1>
-                <p>Sua plataforma de jogos e assinaturas</p>
             </div>
             
             <div class="game-header-actions">
@@ -129,19 +128,94 @@
 
         <aside class="game-cart-sidebar">
             <div class="game-cart-header">
-                <h2>🛒 Carrinho de Jogos</h2>
-                <button class="close-cart">❌</button>
+                <h2>🛒 Seu Carrinho</h2>
+                <button class="game-cart-close-btn">×</button>
             </div>
-            <div class="cart-items">
-                <!-- Itens do carrinho serão adicionados dinamicamente aqui -->
-            </div>
-            <div class="game-cart-summary">
-                <div class="cart-total">
-                    <span>Total Gamer:</span>
-                    <span class="total-price">R$ 0,00</span>
+
+            <div class="game-cart-items">
+                <div class="game-cart-item">
+                    <div class="cart-item-icon">💎</div>
+                    <div class="cart-item-details">
+                        <h3>Pacote 500 Diamantes</h3>
+                        <p>Free Fire</p>
+                        <div class="cart-item-price-quantity">
+                            <span class="cart-item-price">R$ 29,99</span>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item-remove-container">
+                        <button class="cart-item-remove" title="Remover produto">
+                            <span class="remove-icon">🗑️</span>
+                            <span class="remove-text">Remover</span>
+                        </button>
+                    </div>
                 </div>
-                <button class="game-checkout-btn">Finalizar Compra</button>
+
+                <div class="game-cart-item">
+                    <div class="cart-item-icon">🎮</div>
+                    <div class="cart-item-details">
+                        <h3>Passe de Batalha</h3>
+                        <p>Free Fire</p>
+                        <div class="cart-item-price-quantity">
+                            <span class="cart-item-price">R$ 49,99</span>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item-remove-container">
+                        <button class="cart-item-remove" title="Remover produto">
+                            <span class="remove-icon">🗑️</span>
+                            <span class="remove-text">Remover</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="game-cart-item">
+                    <div class="cart-item-icon">🌟</div>
+                    <div class="cart-item-details">
+                        <h3>Skin Exclusiva</h3>
+                        <p>Free Fire</p>
+                        <div class="cart-item-price-quantity">
+                            <span class="cart-item-price">R$ 19,99</span>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cart-item-remove-container">
+                        <button class="cart-item-remove" title="Remover produto">
+                            <span class="remove-icon">🗑️</span>
+                            <span class="remove-text">Remover</span>
+                        </button>
+                    </div>
+                </div>
             </div>
+
+            <div class="game-cart-summary">
+                <div class="cart-summary-row">
+                    <span>Subtotal</span>
+                    <span>R$ 99,97</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Desconto</span>
+                    <span>-R$ 10,00</span>
+                </div>
+                <div class="cart-summary-row total">
+                    <span>Total</span>
+                    <span>R$ 89,97</span>
+                </div>
+            </div>
+
+            <button class="game-checkout-btn">Finalizar Compra</button>
         </aside>
 
         <footer class="game-footer">
