@@ -11,39 +11,231 @@ class CartManager {
         };
 
         this.initEventListeners();
+        this.createCartAnimationStyles();
+    }
+
+    createCartAnimationStyles() {
+        const styleTag = document.createElement('style');
+        styleTag.textContent = `
+            .game-cart-sidebar {
+                background-color: #f0f0ff;
+                border-left: 5px solid #6a5acd;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+            }
+
+            .game-cart-header {
+                background-color: #6a5acd;
+                color: white;
+                border-bottom: 3px solid #4b3d8f;
+                padding: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .game-cart-header h2 {
+                margin: 0;
+                font-size: 1.5em;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+
+            .game-cart-items {
+                max-height: 500px;
+                overflow-y: auto;
+                padding: 15px;
+                background-color: #ffffff;
+            }
+
+            .game-cart-item {
+                display: flex;
+                align-items: center;
+                background-color: #f9f9ff;
+                border: 2px solid #6a5acd;
+                border-radius: 15px;
+                margin-bottom: 10px;
+                padding: 10px;
+                transition: all 0.3s ease;
+                box-shadow: 3px 3px 8px rgba(0,0,0,0.1);
+            }
+
+            .game-cart-item:hover {
+                transform: scale(1.02);
+                box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+            }
+
+            .game-cart-item .cart-item-icon {
+                font-size: 40px;
+                margin-right: 15px;
+                background-color: #e6e6fa;
+                border-radius: 50%;
+                width: 70px;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1);
+            }
+
+            .cart-item-details {
+                flex-grow: 1;
+            }
+
+            .cart-item-details h3 {
+                margin: 0 0 5px 0;
+                color: #4b3d8f;
+                font-size: 1.1em;
+            }
+
+            .cart-item-details .description {
+                color: #666;
+                font-size: 0.9em;
+                margin: 0 0 5px 0;
+            }
+
+            .cart-item-price-quantity {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .cart-item-quantity {
+                display: flex;
+                align-items: center;
+                background-color: #e6e6fa;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            .cart-item-quantity button {
+                background-color: #6a5acd;
+                color: white;
+                border: none;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .cart-item-quantity button:hover {
+                background-color: #4b3d8f;
+            }
+
+            .cart-item-quantity .quantity {
+                padding: 0 10px;
+                font-weight: bold;
+                color: #4b3d8f;
+            }
+
+            .cart-item-remove-container {
+                display: flex;
+                align-items: center;
+            }
+
+            .cart-item-remove {
+                background-color: #ff6b6b;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .cart-item-remove:hover {
+                background-color: #ff4757;
+                transform: scale(1.1) rotate(5deg);
+            }
+
+            .game-cart-summary {
+                background-color: #f0f0ff;
+                padding: 15px;
+                border-top: 3px solid #6a5acd;
+            }
+
+            .cart-summary-row {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                color: #4b3d8f;
+            }
+
+            .cart-summary-row.total {
+                font-weight: bold;
+                border-top: 2px solid #6a5acd;
+                padding-top: 10px;
+            }
+
+            .game-checkout-btn {
+                width: 100%;
+                background-color: #6a5acd;
+                color: white;
+                border: none;
+                padding: 15px;
+                border-radius: 25px;
+                font-weight: bold;
+                text-transform: uppercase;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .game-checkout-btn:hover {
+                background-color: #4b3d8f;
+                transform: translateY(-3px);
+                box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+            }
+
+            .game-clear-cart-btn {
+                background-color: #ff6b6b;
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 20px;
+                transition: all 0.3s ease;
+            }
+
+            .game-clear-cart-btn:hover {
+                background-color: #ff4757;
+                transform: scale(1.05);
+            }
+
+            .game-cart-item.removing {
+                transform: scale(0.8);
+                opacity: 0;
+                transition: all 0.5s ease;
+            }
+        `;
+        document.head.appendChild(styleTag);
     }
 
     initEventListeners() {
-        // Adicionar evento de limpar carrinho
         if (this.cartSummary.clearCartButton) {
             this.cartSummary.clearCartButton.addEventListener('click', () => this.clearCart());
         }
 
-        // Adicionar evento de finalizar compra
         if (this.cartSummary.checkoutButton) {
             this.cartSummary.checkoutButton.addEventListener('click', () => this.checkout());
         }
 
-        // Delegação de eventos para interações no carrinho
         if (this.cartItemsContainer) {
             this.cartItemsContainer.addEventListener('click', (event) => {
                 const target = event.target;
                 
-                // Botão de aumentar quantidade
                 if (target.classList.contains('quantity-btn-increase')) {
                     const itemElement = target.closest('.game-cart-item');
                     const productId = parseInt(itemElement.dataset.productId);
                     this.updateItemQuantity(productId, 1);
                 }
 
-                // Botão de diminuir quantidade
                 if (target.classList.contains('quantity-btn-decrease')) {
                     const itemElement = target.closest('.game-cart-item');
                     const productId = parseInt(itemElement.dataset.productId);
                     this.updateItemQuantity(productId, -1);
                 }
 
-                // Botão de remover item
                 if (target.classList.contains('cart-item-remove')) {
                     const itemElement = target.closest('.game-cart-item');
                     const productId = parseInt(itemElement.dataset.productId);
@@ -52,19 +244,16 @@ class CartManager {
             });
         }
 
-        // Adicionar evento de abrir carrinho
         const cartOpenButtons = document.querySelectorAll('.open-cart-btn');
         cartOpenButtons.forEach(button => {
             button.addEventListener('click', () => this.openCart());
         });
 
-        // Adicionar evento de fechar carrinho
         const cartCloseButton = document.querySelector('.game-cart-close-btn');
         cartCloseButton.addEventListener('click', () => this.closeCart());
     }
 
     addItem(product) {
-        // Verificar se o produto já está no carrinho
         const existingItem = this.items.find(item => item.id === product.id);
         
         if (existingItem) {
@@ -97,7 +286,6 @@ class CartManager {
         if (item) {
             item.quantity += change;
             
-            // Remover item se quantidade for zero
             if (item.quantity <= 0) {
                 this.removeItem(productId);
             } else {
@@ -125,10 +313,8 @@ class CartManager {
     renderCart() {
         if (!this.cartItemsContainer) return;
 
-        // Limpar container atual
         this.cartItemsContainer.innerHTML = '';
 
-        // Renderizar novos itens
         this.items.forEach(item => {
             const cartItemElement = document.createElement('div');
             cartItemElement.classList.add('game-cart-item', 'cartoon-style');
@@ -138,7 +324,7 @@ class CartManager {
                 <div class="cart-item-icon">${item.icon}</div>
                 <div class="cart-item-details">
                     <h3>${item.name}</h3>
-                    <p>${item.description}</p>
+                    <p class="description">${item.description}</p>
                     <div class="cart-item-price-quantity">
                         <span class="cart-item-price">R$ ${(item.price * item.quantity).toFixed(2)}</span>
                         <div class="cart-item-quantity">
@@ -151,7 +337,6 @@ class CartManager {
                 <div class="cart-item-remove-container">
                     <button class="cart-item-remove" title="Remover produto">
                         <span class="remove-icon">🗑️</span>
-                        <span class="remove-text">Remover</span>
                     </button>
                 </div>
             `;
@@ -177,13 +362,11 @@ class CartManager {
             this.cartSummary.totalElement.textContent = `R$ ${total.toFixed(2)}`;
         }
 
-        // Atualizar contador do botão flutuante
         const floatingCartButton = document.querySelector('.game-floating-cart-button .cart-item-count');
         if (floatingCartButton) {
             const totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
             floatingCartButton.textContent = totalItems;
             
-            // Mostrar/esconder contador
             if (totalItems > 0) {
                 floatingCartButton.style.display = 'flex';
             } else {
@@ -194,21 +377,71 @@ class CartManager {
 
     checkout() {
         if (this.items.length === 0) {
-            alert('Seu carrinho está vazio! 🛒');
+            this.showCartoonAlert('🛒 Seu carrinho está vazio!', '😢 Adicione alguns itens antes de finalizar.');
             return;
         }
 
-        // Lógica de checkout
         const checkoutDetails = this.items.map(item => 
             `${item.name} x${item.quantity} - R$ ${(item.price * item.quantity).toFixed(2)}`
         ).join('\n');
 
         const total = this.items.reduce((total, item) => total + (item.price * item.quantity), 0);
 
-        alert(`🎉 Compra finalizada!\n\nDetalhes:\n${checkoutDetails}\n\nTotal: R$ ${total.toFixed(2)}`);
+        this.showCartoonAlert('🎉 Compra Finalizada!', 
+            `Detalhes:\n${checkoutDetails}\n\nTotal: R$ ${total.toFixed(2)}`);
         
-        // Limpar carrinho após checkout
         this.clearCart();
+    }
+
+    showCartoonAlert(title, message) {
+        const alertContainer = document.createElement('div');
+        alertContainer.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0ff;
+            border: 5px solid #6a5acd;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 90%;
+            width: 300px;
+        `;
+
+        alertContainer.innerHTML = `
+            <h2 style="color: #6a5acd; margin-bottom: 15px;">${title}</h2>
+            <p style="white-space: pre-line; color: #4b3d8f;">${message}</p>
+            <button style="
+                background-color: #6a5acd;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 20px;
+                margin-top: 15px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            ">Entendi!</button>
+        `;
+
+        const closeButton = alertContainer.querySelector('button');
+        closeButton.addEventListener('click', () => {
+            alertContainer.style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => document.body.removeChild(alertContainer), 300);
+        });
+
+        const styleTag = document.createElement('style');
+        styleTag.textContent = `
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+                to { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            }
+        `;
+        document.head.appendChild(styleTag);
+
+        document.body.appendChild(alertContainer);
     }
 
     openCart() {
@@ -226,7 +459,6 @@ class CartManager {
     }
 }
 
-// Inicializar carrinho
 document.addEventListener('DOMContentLoaded', () => {
     window.cartManager = new CartManager();
 });

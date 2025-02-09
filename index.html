@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎮 Legends Store - Seu Marketplace de Games</title>
-    
-    <!-- Estilos Base -->
+    <title>🎮 Legends Store</title>
     <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="header.css">
@@ -13,10 +11,57 @@
     <link rel="stylesheet" href="products.css">
     <link rel="stylesheet" href="cart-footer.css">
     <link rel="stylesheet" href="cart-floating.css">
+    <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="game-container">
+        <!-- Modal de Login/Registro -->
+        <div class="game-login-modal" id="loginModal">
+            <div class="login-container">
+                <div class="login-header">
+                    <h2>🎮 Legends Store</h2>
+                    <button class="close-login-modal">✖️</button>
+                </div>
+                
+                <div class="login-content">
+                    <div class="login-form-container">
+                        <form id="loginForm" class="login-form">
+                            <h3>Login</h3>
+                            <div class="form-group">
+                                <label for="loginUsername">👤 Usuário</label>
+                                <input type="text" id="loginUsername" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">🔐 Senha</label>
+                                <input type="password" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="login-btn">Entrar</button>
+                            <p class="switch-form">Não tem conta? <a href="#" class="switch-to-register">Cadastre-se</a></p>
+                        </form>
+
+                        <form id="registerForm" class="register-form" style="display:none;">
+                            <h3>Cadastro</h3>
+                            <div class="form-group">
+                                <label for="registerUsername">👤 Nome de Usuário</label>
+                                <input type="text" id="registerUsername" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="registerPassword">🔐 Senha</label>
+                                <input type="password" id="registerPassword" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">🔐 Confirmar Senha</label>
+                                <input type="password" id="confirmPassword" required>
+                            </div>
+                            <button type="submit" class="register-btn">Cadastrar</button>
+                            <p class="switch-form">Já tem conta? <a href="#" class="switch-to-login">Faça Login</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Header -->
         <header class="game-header">
             <div class="logo-container">
@@ -27,6 +72,13 @@
                 <div class="game-search-bar">
                     <input type="text" placeholder="Buscar jogos, assinaturas...">
                     <button class="search-button">🔍</button>
+                </div>
+                
+                <div class="game-login-section">
+                    <button class="game-login-btn">
+                        <span class="login-icon">👤</span>
+                        <span class="login-text">Entrar</span>
+                    </button>
                 </div>
             </div>
         </header>
@@ -258,5 +310,6 @@
     <!-- Scripts -->
     <script src="store.js"></script>
     <script src="cart.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>

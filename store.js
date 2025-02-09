@@ -2,7 +2,7 @@
 const CATEGORIES = [
     { 
         id: 'all', 
-        name: 'Todos os Jogos', 
+        name: 'Todos os Produtos', 
         icon: '🌐',
         description: 'Todos os produtos disponíveis'
     },
@@ -13,46 +13,22 @@ const CATEGORIES = [
         description: 'Diamantes e Passes de Batalha'
     },
     { 
-        id: 'cod-mobile', 
-        name: 'Call of Duty Mobile', 
-        icon: '🔫',
-        description: 'CP e Skins para COD Mobile'
-    },
-    { 
-        id: 'lol', 
-        name: 'League of Legends', 
-        icon: '🎲',
-        description: 'Riot Points e Skins'
-    },
-    { 
-        id: 'minecraft', 
-        name: 'Minecraft', 
-        icon: '🧱',
-        description: 'Conteúdo e Mods para Minecraft'
-    },
-    { 
         id: 'roblox', 
         name: 'Roblox', 
         icon: '🤖',
         description: 'Robux e Itens'
     },
     { 
-        id: 'pubg', 
-        name: 'PUBG Mobile', 
-        icon: '🚙',
-        description: 'UC e Skins para PUBG'
+        id: 'anime-fighters', 
+        name: 'Anime Fighters', 
+        icon: '⚔️',
+        description: 'Itens e Moedas para Anime Fighters'
     },
     { 
-        id: 'rocket-league', 
-        name: 'Rocket League', 
-        icon: '🚀',
-        description: 'Créditos e Itens'
-    },
-    { 
-        id: 'coming-soon', 
-        name: '🚧 Em Breve', 
-        icon: '⏳',
-        description: 'Novas categorias em desenvolvimento'
+        id: 'assinaturas', 
+        name: 'Assinaturas', 
+        icon: '📺',
+        description: 'Planos de Streaming e Serviços'
     }
 ];
 
@@ -75,88 +51,66 @@ const PRODUCTS = [
         category: 'free-fire'
     },
 
-    // Call of Duty Mobile
-    {
-        id: 3,
-        name: 'UC 600 Call of Duty Mobile',
-        description: 'UC para Call of Duty Mobile',
-        price: 49.99,
-        icon: '🔫',
-        category: 'cod-mobile'
-    },
-    {
-        id: 4,
-        name: 'Skin Épica COD Mobile',
-        description: 'Skin de arma exclusiva',
-        price: 79.99,
-        icon: '🚀',
-        category: 'cod-mobile'
-    },
-
-    // League of Legends
-    {
-        id: 5,
-        name: 'Skin Lendária LOL',
-        description: 'Skin épica para campeão',
-        price: 79.99,
-        icon: '🎮',
-        category: 'lol'
-    },
-    {
-        id: 6,
-        name: 'Riot Points 2800',
-        description: 'Pacote de Riot Points',
-        price: 99.99,
-        icon: '💰',
-        category: 'lol'
-    },
-
-    // Minecraft
-    {
-        id: 7,
-        name: 'Pacote de Mods Minecraft',
-        description: 'Coleção de mods exclusivos',
-        price: 29.99,
-        icon: '🧱',
-        category: 'minecraft'
-    },
-    {
-        id: 8,
-        name: 'Skin de Personagem Minecraft',
-        description: 'Skin personalizada',
-        price: 19.99,
-        icon: '👤',
-        category: 'minecraft'
-    },
-
     // Roblox
     {
-        id: 9,
+        id: 3,
         name: '4500 Robux',
         description: 'Pacote de Robux',
         price: 59.99,
         icon: '🤖',
         category: 'roblox'
     },
-
-    // PUBG Mobile
     {
-        id: 10,
-        name: 'UC 1500 PUBG Mobile',
-        description: 'UC para PUBG Mobile',
-        price: 79.99,
-        icon: '🚙',
-        category: 'pubg'
+        id: 4,
+        name: '10000 Robux',
+        description: 'Pacote Premium de Robux',
+        price: 99.99,
+        icon: '💰',
+        category: 'roblox'
     },
 
-    // Rocket League
+    // Anime Fighters
     {
-        id: 11,
-        name: 'Créditos Rocket League',
-        description: 'Pacote de créditos',
+        id: 5,
+        name: 'Pacote 5000 Moedas',
+        description: 'Moedas para Anime Fighters',
         price: 39.99,
-        icon: '🚀',
-        category: 'rocket-league'
+        icon: '⚔️',
+        category: 'anime-fighters'
+    },
+    {
+        id: 6,
+        name: 'Skin Lendária',
+        description: 'Skin exclusiva de personagem',
+        price: 79.99,
+        icon: '✨',
+        category: 'anime-fighters'
+    },
+
+    // Assinaturas
+    {
+        id: 7,
+        name: 'Netflix Básico',
+        description: 'Plano Básico 1 Mês',
+        price: 24.99,
+        icon: '🎬',
+        category: 'assinaturas'
+    },
+    {
+        id: 8,
+        name: 'Netflix Premium',
+        description: 'Plano Premium 1 Mês',
+        price: 49.99,
+        icon: '🌟',
+        category: 'assinaturas'
+    },
+    {
+        id: 9,
+        name: 'Amazon Prime',
+        description: 'Assinatura Amazon Prime 1 Mês',
+        price: 14.99,
+        icon: '📦',
+        category: 'assinaturas'
     }
 ];
 
