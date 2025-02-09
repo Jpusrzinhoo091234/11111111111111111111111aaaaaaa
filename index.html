@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legends Store 🎶 - Sua Loja Musical Cartoon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="src/css/styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white">
+    <!-- Cabeçalho Cartoon -->
+    <header class="fixed top-0 left-0 w-full z-50 cartoon-menu p-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <h1 class="text-3xl font-bold flex items-center cartoon-emoji">
+                Legends Store 🎸
+            </h1>
+        </div>
+        
+        <nav class="hidden md:flex space-x-6">
+            <a href="#" class="cartoon-button flex items-center">Início 🏠</a>
+            <a href="#" class="cartoon-button flex items-center">Produtos 🛍️</a>
+            <a href="#" class="cartoon-button flex items-center">Sobre Nós ℹ️</a>
+            <a href="#" class="cartoon-button flex items-center">Contato 📞</a>
+            <a href="#" class="cartoon-button flex items-center relative">
+                Carrinho 🛒 
+                <span class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full px-2 text-xs">0</span>
+            </a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <button class="cartoon-emoji text-2xl">🔍</button>
+            <button class="cartoon-emoji text-2xl">👤</button>
+        </div>
+    </header>
+
+    <!-- Espaço para compensar cabeçalho fixo -->
+    <div class="h-20"></div>
+
+    <!-- Banner Principal Cartoon -->
+    <section class="cartoon-banner relative overflow-hidden py-16">
+        <div class="container mx-auto text-center cartoon-banner-content">
+            <h2 class="text-5xl font-bold mb-6 text-white drop-shadow-lg">
+                Descubra as Lendas Musicais! 🎉
+            </h2>
+            <div class="flex justify-center space-x-8 mt-8">
+                <div class="cartoon-emoji text-6xl">🎧</div>
+                <div class="cartoon-emoji text-6xl">👕</div>
+                <div class="cartoon-emoji text-6xl">🎸</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos -->
+    <section class="container mx-auto mt-12 px-4">
+        <div class="flex cartoon-responsive-stack">
+            <!-- Filtros Laterais -->
+            <div class="w-1/4 pr-8">
+                <h3 class="text-2xl mb-6 text-cartoon-primary">Categorias</h3>
+                <div class="space-y-4">
+                    <button class="cartoon-button w-full flex items-center justify-center">
+                        👕 Roupas
+                    </button>
+                    <button class="cartoon-button w-full flex items-center justify-center">
+                        🎒 Acessórios
+                    </button>
+                    <button class="cartoon-button w-full flex items-center justify-center">
+                        🖼️ Decoração
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grade de Produtos -->
+            <div class="w-3/4 grid grid-cols-3 gap-6">
+                <!-- Exemplo de Produto Cartoon -->
+                <div class="cartoon-product-card p-6 text-center">
+                    <div class="text-6xl mb-4 cartoon-emoji">🎧</div>
+                    <h4 class="text-xl font-semibold mb-2">Fones de Ouvido Legends</h4>
+                    <p class="text-2xl mb-4">R$ 299,99 💰</p>
+                    <button class="cartoon-button w-full">
+                        Adicionar ao Carrinho 🛒
+                    </button>
+                </div>
+                <!-- Mais produtos aqui... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé Cartoon -->
+    <footer class="bg-cartoon-secondary text-black py-16 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <!-- Coluna 1: Links Úteis -->
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-white flex items-center">
+                        🌐 Links Úteis
+                    </h4>
+                    <div class="space-y-4">
+                        <a href="#" class="cartoon-button block w-full text-left">
+                            🔒 Política de Privacidade
+                        </a>
+                        <a href="#" class="cartoon-button block w-full text-left">
+                            📜 Termos de Uso
+                        </a>
+                        <a href="#" class="cartoon-button block w-full text-left">
+                            ❓ Central de Ajuda
+                        </a>
+                        <a href="#" class="cartoon-button block w-full text-left">
+                            📦 Rastreamento de Pedidos
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Redes Sociais -->
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-white flex items-center">
+                        🤝 Conecte-se
+                    </h4>
+                    <div class="flex flex-col space-y-4">
+                        <a href="#" class="cartoon-button flex items-center">
+                            <span class="text-2xl mr-3">📸</span> Instagram
+                        </a>
+                        <a href="#" class="cartoon-button flex items-center">
+                            <span class="text-2xl mr-3">📘</span> Facebook
+                        </a>
+                        <a href="#" class="cartoon-button flex items-center">
+                            <span class="text-2xl mr-3">🐦</span> Twitter
+                        </a>
+                        <a href="#" class="cartoon-button flex items-center">
+                            <span class="text-2xl mr-3">🎵</span> TikTok
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna 3: Newsletter -->
+                <div>
+                    <h4 class="text-2xl font-bold mb-6 text-white flex items-center">
+                        📬 Newsletter
+                    </h4>
+                    <p class="text-white mb-4">
+                        Receba as últimas novidades e ofertas especiais! 🎉
+                    </p>
+                    <form class="flex flex-col space-y-4">
+                        <input 
+                            type="email" 
+                            placeholder="Seu melhor e-mail 📧" 
+                            class="p-3 rounded-lg bg-white text-black"
+                            required
+                        >
+                        <button 
+                            type="submit" 
+                            class="cartoon-button w-full"
+                        >
+                            Inscrever-se 🚀
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Linha de Copyright -->
+            <div class="mt-12 pt-8 border-t border-white/20 text-center">
+                <p class="text-white">
+                    © 2025 Legends Store 🎸 Todos os direitos reservados
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/js/main.js"></script>
+</body>
+</html>
